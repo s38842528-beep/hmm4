@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>台中景點一日遊｜StoryMap</title>
+
+<style>
+    body {
+        margin: 0;
+        background: #f5fbff;
+        font-family: "Noto Sans TC", sans-serif;
+        color: #333;
+        line-height: 1.7;
+    }
+
+    /* 頁首 */
+    header {
+        background: linear-gradient(135deg, #4fc3f7, #0288d1);
+        color: white;
+        padding: 50px 20px;
+        text-align: center;
+    }
+    header h1 {
+        margin: 0;
+        font-size: 2rem;
+    }
+    header p {
+        opacity: 0.9;
+        margin-top: 8px;
+    }
+
+    /* 容器 */
+    .container {
+        width: 90%;
+        max-width: 900px;
+        margin: 40px auto;
+    }
+
+    /* 互動卡片 */
+    .card {
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 20px;
+        margin-bottom: 18px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        cursor: pointer;
+        transition: 0.25s;
+    }
+    .card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 14px rgba(0,0,0,0.14);
+    }
+    .card-title {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #0277bd;
+    }
+    .card-content {
+        margin-top: 10px;
+        display: none;
+        font-size: 0.96rem;
+    }
+
+    /* StoryMap 區域 */
+    .storymap-section {
+        margin-top: 60px;
+        text-align: center;
+    }
+    iframe {
+        width: 100%;
+        height: 800px;
+        border: none;
+        border-radius: 12px;
+        box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    }
+
+    footer {
+        text-align: center;
+        padding: 30px 0 50px;
+        color: #777;
+        font-size: 0.9rem;
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>台中景點一日遊</h1>
+    <p>清爽風格 × 互動介紹 × StoryMap 展示</p>
+</header>
+
+<div class="container">
+
+    <!-- 景點卡片：依附件資訊製作 -->
+    <div class="card">
+        <div class="card-title">台中國家歌劇院</div>
+        <div class="card-content">
+            <p>位於台中市西屯區，由日本建築師伊東豊雄以洞窟、地穴概念打造的世界獨特曲牆建築。</p>
+            <p><strong>地址：</strong>台中市西屯區惠來路二段101號</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-title">臺中州廳</div>
+        <div class="card-content">
+            <p>為日治時期的臺中州廳，現為國定古蹟。周邊鄰近台中文學公園、宮原眼科等熱門景點。</p>
+            <p><strong>地址：</strong>台中市西區民權路99號</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-title">審計新村</div>
+        <div class="card-content">
+            <p>原為審計處員工宿舍，後轉型為文創園區，是台中的創業基地與熱門 IG 打卡點。</p>
+            <p><strong>地址：</strong>台中市西區民生路368巷</p>
+        </div>
+    </div>
+</div>
+
+<!-- StoryMap Embed -->
+<div class="storymap-section container">
+    <h2>台中一日遊 StoryMap</h2>
+    <iframe src="https://uploads.knightlab.com/storymapjs/df01161b8f604a76215dfc3e6d6a9662/hm/index.html"></iframe>
+</div>
+
+<footer>
+    © 大傳三A 鄭惠璟
+</footer>
+
+<script>
+    // 卡片互動展開效果
+    const cards = document.querySelectorAll(".card");
+    cards.forEach(card => {
+        card.addEventListener("click", () => {
+            const content = card.querySelector(".card-content");
+            content.style.display = 
+                content.style.display === "block" ? "none" : "block";
+        });
+    });
+</script>
+
+</body>
+</html>
